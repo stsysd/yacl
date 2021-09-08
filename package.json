@@ -1,11 +1,20 @@
 {
   "name": "yacl",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
-  "main": "index.js",
+  "main": "lib.js",
+  "bin": "./cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "parse": "node ./cli.js",
+    "build": "peggy -o generated/parser.js grammar.peggy",
+    "prepare": "npm run build"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "peggy": "^1.2.0"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5"
+  }
 }
